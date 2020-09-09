@@ -13,6 +13,7 @@ import { CHANGE_USERNAME } from './constants';
 // The initial state of the App
 export const initialState = {
   username: '',
+  strings: [],
 };
 
 /* eslint-disable default-case, no-param-reassign */

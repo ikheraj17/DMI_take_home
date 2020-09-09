@@ -23,7 +23,7 @@ export function loadStringsSuccess(strings) {
   };
 }
 
-export function loadEventsFailure(err) {
+export function loadStringsFailure(err) {
   return {
     type: LOAD_STRINGS_FAILURE,
     err,

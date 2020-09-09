@@ -2,7 +2,7 @@
 
 const express = require('express');
 const logger = require('./logger');
-
+const bodyParser = require('body-parser');
 const argv = require('./argv');
 const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
@@ -17,6 +17,7 @@ const allStrings = [{ id: 1, text: 'This is a string sent from the server' }];
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
+app.use(bodyParser.json());
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
@@ -34,10 +35,6 @@ app.get('*.js', (req, res, next) => {
   req.url = req.url + '.gz'; // eslint-disable-line
   res.set('Content-Encoding', 'gzip');
   next();
-});
-
-app.get('/strings', (req, res) => {
-  res.send(allStrings);
 });
 
 // Start your app.

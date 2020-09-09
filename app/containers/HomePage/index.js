@@ -69,17 +69,14 @@ export function HomePage({
       <div>
         <CenteredSection>
           <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
+            <FormattedMessage id="app.greeting" defaultMessage="String List" />
           </H2>
-          <p>
-            <FormattedMessage {...messages.startProjectMessage} />
-          </p>
         </CenteredSection>
         <Section>
-          <H2>
+          {/* <H2>
             <FormattedMessage {...messages.trymeHeader} />
-          </H2>
-          <Form onSubmit={onSubmitForm}>
+          </H2> */}
+          {/* <Form onSubmit={onSubmitForm}>
             <label htmlFor="username">
               <FormattedMessage {...messages.trymeMessage} />
               <AtPrefix>
@@ -93,8 +90,8 @@ export function HomePage({
                 onChange={onChangeUsername}
               />
             </label>
-          </Form>
-          <ReposList {...reposListProps} />
+          </Form> */}
+          {/* <ReposList {...reposListProps} /> */}
         </Section>
       </div>
     </article>

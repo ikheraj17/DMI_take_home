@@ -19,7 +19,7 @@ function Header() {
           <FormattedMessage {...messages.home} />
         </HeaderLink>
         <HeaderLink to="/features">
-          <FormattedMessage {...messages.features} />
+          <FormattedMessage id="app.add" defaultMessage="Add a string" />
         </HeaderLink>
       </NavBar>
     </div>

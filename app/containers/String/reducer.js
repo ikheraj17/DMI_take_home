@@ -21,7 +21,6 @@ const stringReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case LOAD_STRINGS:
-        console.log(action);
         draft.loading = true;
         draft.error = false;
         break;

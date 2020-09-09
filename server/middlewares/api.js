@@ -4,7 +4,7 @@ var id = 0;
 const allStrings = [{ id, text: 'this is a string sent from the server' }];
 
 router.use((req, res, next) => {
-  console.log('something is happening');
+  console.log('getting strings');
   next();
 });
 

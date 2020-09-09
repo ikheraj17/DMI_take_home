@@ -73,25 +73,6 @@ export function HomePage({
           </H2>
         </CenteredSection>
         <Section>
-          {/* <H2>
-            <FormattedMessage {...messages.trymeHeader} />
-          </H2> */}
-          {/* <Form onSubmit={onSubmitForm}>
-            <label htmlFor="username">
-              <FormattedMessage {...messages.trymeMessage} />
-              <AtPrefix>
-                <FormattedMessage {...messages.trymeAtPrefix} />
-              </AtPrefix>
-              <Input
-                id="username"
-                type="text"
-                placeholder="mxstbr"
-                value={username}
-                onChange={onChangeUsername}
-              />
-            </label>
-          </Form> */}
-          {/* <ReposList {...reposListProps} /> */}
           <String />
         </Section>
       </div>

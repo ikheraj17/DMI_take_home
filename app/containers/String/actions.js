@@ -16,10 +16,10 @@ export function loadStrings() {
   };
 }
 
-export function loadStringsSuccess(strings) {
+export function loadStringsSuccess(allStrings) {
   return {
     type: LOAD_STRINGS_SUCCESS,
-    strings,
+    allStrings,
   };
 }
 

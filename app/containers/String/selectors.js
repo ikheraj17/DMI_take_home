@@ -27,5 +27,11 @@ const makeAllStringsSelector = () =>
     substate => substate.allStrings,
   );
 
+const makeLoadingSelector = () =>
+  createSelector(
+    selectStringDomain,
+    substate => substate.loading,
+  );
+
 export default makeSelectString;
-export { selectStringDomain, makeAllStringsSelector };
+export { selectStringDomain, makeAllStringsSelector, makeLoadingSelector };

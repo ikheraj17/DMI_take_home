@@ -4,9 +4,13 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { makeSelectStrings } from './selectors';
+import { getStrings } from './actions';
 import { makeSelectLoading, makeSelectError } from '../App/selectors';
 
-export const Strings = ({ items }) => {
+export const Strings = ({ items, dispatch }) => {
+  useEffect(() => {
+    dispatch(getStrings());
+  }, [dispatch]);
   return (
     <div>
       <div>

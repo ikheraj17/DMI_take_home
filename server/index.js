@@ -13,6 +13,7 @@ const ngrok =
     : false;
 const { resolve } = require('path');
 const app = express();
+const allStrings = [{ id: 1, text: 'This is a string sent from the server' }];
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
@@ -33,6 +34,10 @@ app.get('*.js', (req, res, next) => {
   req.url = req.url + '.gz'; // eslint-disable-line
   res.set('Content-Encoding', 'gzip');
   next();
+});
+
+app.get('/strings', (req, res) => {
+  res.send(allStrings);
 });
 
 // Start your app.

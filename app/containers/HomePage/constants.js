@@ -11,3 +11,4 @@
 
 export const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
 export const GET_STRINGS = 'boilerplate/Home/GET_STRINGS';
+export const SET_STRINGS = 'boilerplate/Home/SET_STRINGS';

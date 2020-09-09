@@ -14,7 +14,7 @@ import { compose } from 'redux';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
-import makeSelectString from './selectors';
+import { makeAllStringsSelector } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
@@ -39,7 +39,7 @@ String.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  string: makeSelectString(),
+  allStrings: makeAllStringsSelector(),
 });
 
 function mapDispatchToProps(dispatch) {

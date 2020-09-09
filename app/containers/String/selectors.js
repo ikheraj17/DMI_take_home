@@ -21,5 +21,11 @@ const makeSelectString = () =>
     substate => substate,
   );
 
+const makeAllStringsSelector = () =>
+  createSelector(
+    selectStringDomain,
+    substate => substate.allStrings,
+  );
+
 export default makeSelectString;
-export { selectStringDomain };
+export { selectStringDomain, makeAllStringsSelector };

@@ -20,7 +20,7 @@ import {
   makeSelectError,
 } from 'containers/App/selectors';
 import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
+import Strings from './Strings';
 import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
 import Form from './Form';
@@ -92,6 +92,7 @@ export function HomePage({
             </label>
           </Form> */}
           {/* <ReposList {...reposListProps} /> */}
+          <Strings />
         </Section>
       </div>
     </article>

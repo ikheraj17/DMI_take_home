@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-  console.log(req.body);
   const toAttach = { id, text: req.body.text };
   allStrings.unshift(toAttach);
   id += 1;

@@ -15,7 +15,7 @@
  *    }
  */
 
-import { CHANGE_USERNAME } from './constants';
+import { CHANGE_USERNAME, SET_STRINGS, GET_STRINGS } from './constants';
 
 /**
  * Changes the input field of the form
@@ -28,5 +28,18 @@ export function changeUsername(username) {
   return {
     type: CHANGE_USERNAME,
     username,
+  };
+}
+
+export function getStrings() {
+  return {
+    type: GET_STRINGS,
+  };
+}
+
+export function setStrings(strings) {
+  return {
+    type: SET_STRINGS,
+    strings,
   };
 }

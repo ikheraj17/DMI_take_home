@@ -5,9 +5,10 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { LOAD_REPOS } from 'containers/App/constants';
 import { reposLoaded, repoLoadingError } from 'containers/App/actions';
-
 import request from 'utils/request';
 import { makeSelectUsername } from 'containers/HomePage/selectors';
+import { GET_STRINGS } from './constants';
+import { getStrings, setStrings } from './actions';
 
 /**
  * Github repos request/response handler
@@ -35,4 +36,25 @@ export default function* githubData() {
   // It returns task descriptor (just like fork) so we can continue execution
   // It will be cancelled automatically on component unmount
   yield takeLatest(LOAD_REPOS, getRepos);
+}
+
+export function* getAllStrings() {
+  const requestURL = '/strings';
+  try {
+    const allStrings = yield call(request, requestURL);
+    yield put(getStrings());
+    yield put(setStrings(allStrings));
+  } catch (err) {
+    yield put(
+      getStrings({ id: 0, text: 'There was an error getting strings' }),
+    );
+  }
+}
+
+export function* onGetStrings() {
+  try {
+    yield takeLatest(GET_STRINGS, getAllStrings());
+  } catch (err) {
+    console.log(err);
+  }
 }

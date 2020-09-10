@@ -13,14 +13,12 @@ import Button from '../Button';
 
 function StringInput() {
   const [input, setInput] = useState('');
-  const [id, setId] = useState(1);
 
   const addString = () => {
     if (input.length) {
       axios
-        .post('/api/add', { id, text: input })
+        .post('/api/add', { text: input })
         .then(res => {
-          setId(id + 1);
           setInput('');
           alert('You added a string!');
         })

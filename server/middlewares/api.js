@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const allStrings = [];
+let id = 1;
 
 router.use(bodyParser.json());
 
@@ -15,7 +16,9 @@ router.get('/', (req, res) => {
 
 router.post('/add', (req, res) => {
   console.log(req.body);
-  allStrings.unshift(req.body);
+  const toAttach = { id, text: req.body.text };
+  allStrings.unshift(toAttach);
+  id += 1;
   res.send('string added');
 });
 

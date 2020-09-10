@@ -1,7 +1,5 @@
 import { loadStrings, loadStringsSuccess } from '../actions';
 import { LOAD_STRINGS, LOAD_STRINGS_SUCCESS } from '../constants';
-// const { loadStrings, loadStringsSuccess } = require('../actions');
-// const { LOAD_STRINGS, LOAD_STRINGS_SUCCESS } = require('../constants');
 
 describe('String actions', () => {
   describe('loadStrings Action', () => {

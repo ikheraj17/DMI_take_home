@@ -1,13 +1,15 @@
-// import produce from 'immer';
+import produce from 'immer';
 import stringReducer from '../reducer';
 // import { someAction } from '../actions';
-
+import { loadStrings, loadStringsSuccess } from '../actions';
 /* eslint-disable default-case, no-param-reassign */
 describe('stringReducer', () => {
   let state;
   beforeEach(() => {
     state = {
-      // default state params here
+      allStrings: [],
+      loading: false,
+      error: true,
     };
   });
 

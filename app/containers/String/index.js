@@ -17,18 +17,17 @@ import { makeAllStringsSelector, makeLoadingSelector } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import ListItem from '../../components/ListItem';
-import Loadable from './Loadable';
 
 // eslint-disable-next-line no-shadow
-export function String({ allStrings, loading, loadStrings }) {
+export function String({ allStrings, loadStrings }) {
   useInjectReducer({ key: 'string', reducer });
   useInjectSaga({ key: 'string', saga });
 
   useEffect(() => {
     loadStrings();
   }, []);
-  if (loading) {
-    return <div>Loading strings...</div>;
+  if (!allStrings.length) {
+    return <div>No strings here! You should add some... I feel useless.</div>;
   }
   return (
     <div>
@@ -48,7 +47,6 @@ export function String({ allStrings, loading, loadStrings }) {
 String.propTypes = {
   loadStrings: PropTypes.func.isRequired,
   allStrings: PropTypes.array,
-  loading: PropTypes.bool,
 };
 
 const mapStateToProps = createStructuredSelector({

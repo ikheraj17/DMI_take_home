@@ -4,33 +4,59 @@
  *
  */
 
-import React from 'react';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-
+import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import axios from 'axios';
 import messages from './messages';
 import CenteredSection from '../../containers/HomePage/CenteredSection';
 import Button from '../Button';
 
 function StringInput() {
+  const [input, setInput] = useState('');
+  const [id, setId] = useState(1);
+
+  const addString = () => {
+    if (input.length) {
+      axios
+        .post('/api/add', { id, text: input })
+        .then(res => {
+          setId(id + 1);
+          setInput('');
+          alert('You added a string!');
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } else {
+      alert('Are you trying to break me?');
+    }
+  };
+
   return (
     <div>
       <CenteredSection>
         <div style={{ marginTop: '5%' }}>
           <FormattedMessage {...messages.header} />
         </div>
-        <form>
-          <input type="text" style={{ width: '80%', marginTop: '10%' }} />
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            addString();
+          }}
+        >
+          <input
+            onChange={e => setInput(e.target.value)}
+            value={input}
+            type="text"
+            style={{ width: '80%', marginTop: '10%' }}
+          />
         </form>
-        <Button onClick={() => alert('woo')} primary={1}>
+        <Button onClick={() => addString()} primary={1}>
           Submit Input
         </Button>
       </CenteredSection>
     </div>
   );
 }
-
-StringInput.propTypes = {};
 
 export default StringInput;

@@ -6,7 +6,6 @@ import { loadStringsSuccess, loadStringsFailure } from './actions';
 // Individual exports for testing
 export function* onGetAllStrings() {
   const requestURL = `/api`;
-  console.log(requestURL);
   try {
     const allStrings = yield call(request, requestURL);
     yield put(loadStringsSuccess(allStrings));

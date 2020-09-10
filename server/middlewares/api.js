@@ -1,15 +1,24 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const router = express.Router();
-var id = 0;
-const allStrings = [{ id, text: 'this is a string sent from the server' }];
+const allStrings = [];
+let id = 1;
+
+router.use(bodyParser.json());
 
 router.use((req, res, next) => {
-  console.log('getting strings');
   next();
 });
 
 router.get('/', (req, res) => {
   res.send(allStrings);
+});
+
+router.post('/add', (req, res) => {
+  const toAttach = { id, text: req.body.text };
+  allStrings.unshift(toAttach);
+  id += 1;
+  res.send('string added');
 });
 
 module.exports = router;

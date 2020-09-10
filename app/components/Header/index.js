@@ -18,7 +18,7 @@ function Header() {
         <HeaderLink to="/">
           <FormattedMessage {...messages.home} />
         </HeaderLink>
-        <HeaderLink to="/features">
+        <HeaderLink primary={1} to="/addastring">
           <FormattedMessage id="app.add" defaultMessage="Add a string" />
         </HeaderLink>
       </NavBar>

@@ -29,3 +29,5 @@ export function loadStringsFailure(err) {
     err,
   };
 }
+
+module.exports = { loadStrings, loadStringsSuccess };

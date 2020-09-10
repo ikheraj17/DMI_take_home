@@ -1,3 +1,7 @@
+// const { defaults } = require('jest-config');
+// module.exports = {
+//   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
+// };
 module.exports = {
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
@@ -28,4 +32,5 @@ module.exports = {
   setupFiles: ['raf/polyfill'],
   testRegex: 'tests/.*\\.test\\.js$',
   snapshotSerializers: [],
+  transformIgnorePatterns: ['<rootDir>/node_modules/'],
 };

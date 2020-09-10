@@ -37,7 +37,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={StringInput} />
+        <Route path="/addastring" component={StringInput} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

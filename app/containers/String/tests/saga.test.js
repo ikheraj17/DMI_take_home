@@ -3,8 +3,9 @@
  */
 
 /* eslint-disable redux-saga/yield-effects */
-// import { take, call, put, select } from 'redux-saga/effects';
-// import stringSaga from '../saga';
+// import { takeLatest, call, put, select } from 'redux-saga/effects';
+// import { getAllStrings, onGetAllStrings } from '../saga';
+// import { LOAD_STRINGS } from '../constants';
 
 // const generator = stringSaga();
 

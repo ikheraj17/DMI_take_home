@@ -8,7 +8,7 @@
  */
 
 import produce from 'immer';
-import { CHANGE_USERNAME, GET_STRINGS, SET_STRINGS } from './constants';
+import { CHANGE_USERNAME, SET_STRINGS } from './constants';
 
 // The initial state of the App
 export const initialState = {

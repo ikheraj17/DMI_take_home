@@ -55,6 +55,6 @@ export function* onGetStrings() {
   try {
     yield takeLatest(GET_STRINGS, getAllStrings());
   } catch (err) {
-    console.log(err);
+    return err;
   }
 }

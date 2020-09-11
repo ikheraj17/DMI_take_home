@@ -1,5 +1,5 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
-import request from 'utils/request';
+import request from '../../utils/request';
 import { LOAD_STRINGS } from './constants';
 import { loadStringsSuccess, loadStringsFailure } from './actions';
 

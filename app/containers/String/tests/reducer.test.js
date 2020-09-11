@@ -1,6 +1,10 @@
 import produce from 'immer';
 import stringReducer from '../reducer';
-import { loadStrings, loadStringsSuccess } from '../actions';
+import {
+  loadStrings,
+  loadStringsSuccess,
+  loadStringsFailure,
+} from '../actions';
 
 /* eslint-disable default-case, no-param-reassign */
 describe('stringReducer', () => {
@@ -39,6 +43,20 @@ describe('stringReducer', () => {
       stringReducer(
         state,
         loadStringsSuccess([{ id: 1, text: 'this is a string' }]),
+      ),
+    ).toEqual(expectedResult);
+  });
+
+  it('should handle the loadStringsFailure action correctly', () => {
+    const expectedResult = produce(state, draft => {
+      draft.loading = false;
+      draft.error = true;
+    });
+
+    expect(
+      stringReducer(
+        state,
+        loadStringsFailure([{ id: 1, text: 'this is a string' }]),
       ),
     ).toEqual(expectedResult);
   });
